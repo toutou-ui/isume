@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 set -e
-echo "占位: 实现你的评测入口 (加载 checkpoints, 重建网格预测, 调用 eval.multi_horizon_metrics)"
+python src/arz_pinn/eval_main.py \
+  --config configs/config_ngsim.yaml \
+  --ckpt checkpoints/ngsim/final_model.pt \
+  --cache data/ngsim/processed/grid_cache.npz \
+  --out outputs/ngsim/metrics.csv
